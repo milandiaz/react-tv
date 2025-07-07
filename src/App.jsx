@@ -12,7 +12,7 @@ export default function App() {
     <>
       <header>
         <p>React TV</p>
-        <ShowSelection />
+        <ShowSelection shows={shows} setSelectedShow={setSelectedShow} />
       </header>
       <main>
         <ShowDetails />

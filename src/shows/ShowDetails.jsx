@@ -13,8 +13,13 @@ export default function ShowDetails(show) {
   return (
     <div className="show-details">
       <h1>{show.name}</h1>
-      <EpisodeList />
-      <EpisodeDetails />
+      <EpisodeList
+        name={show.name}
+        episodes={show.episodes}
+        selectedEpisode={selectedEpisode}
+        setSelectedEpisode={setSelectedEpisode}
+      />
+      <EpisodeDetails episode={selectedEpisode} />
     </div>
   );
 }
