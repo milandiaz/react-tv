@@ -8,14 +8,20 @@ import ShowDetails from "./shows/ShowDetails";
 import ShowSelection from "./shows/ShowSelection";
 
 export default function App() {
+  const [selectedShow, setSelectedShow] = useState();
+  const [shows] = useState(shows);
   return (
     <>
       <header>
         <p>React TV</p>
-        <ShowSelection shows={shows} setSelectedShow={setSelectedShow} />
+        <ShowSelection
+          shows={shows}
+          selectedShow={selectedShow}
+          setSelectedShow={setSelectedShow}
+        />
       </header>
       <main>
-        <ShowDetails />
+        <ShowDetails key={selectedShow?.name} show={selectedShow} />
       </main>
     </>
   );
